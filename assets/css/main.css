@@ -285,6 +285,7 @@ body {
   width: 6.866%; }
 
 .container {
+  position: relative;
   margin-top: 56px;
   margin-right: auto;
   margin-left: auto;
@@ -509,11 +510,52 @@ ul {
   .nav-container {
     width: 1170px; } }
 nav {
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   position: fixed;
   top: 0px;
   background-color: rgba(246, 246, 248, 0.6); }
+  nav .button {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    position: relative;
+    display: inline-block;
+    margin-top: 7px;
+    float: right;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    border: 0px hidden;
+    background-color: rgba(160, 162, 163, 0.4);
+    box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.1); }
+    nav .button:after {
+      content: "";
+      position: absolute;
+      left: 11px;
+      top: 14px;
+      position: absolute;
+      height: 10px;
+      width: 10px;
+      border-right: 3px solid;
+      border-bottom: 3px solid;
+      border-color: #D3D2D2;
+      -webkit-transform: rotate(-135deg);
+      -moz-transform: rotate(-135deg);
+      -ms-transform: rotate(-135deg);
+      -o-transform: rotate(-135deg);
+      transform: rotate(-135deg); }
+    nav .button:focus {
+      border: 0px hidden;
+      outline-style: none; }
+    nav .button:active {
+      box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.5); }
+  nav .down {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg); }
   nav .nav-first {
     background-color: #32404E;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
@@ -534,9 +576,17 @@ nav {
       nav .nav-first .logo {
         display: none;
         position: absolute; } }
-  nav .box-upred {
-    margin-top: 4px;
-    margin-bottom: 0px;
+
+.sel-block {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 100%;
+  position: absolute;
+  top: 50px; }
+  .sel-block .box-upred {
+    margin-top: 7px;
+    margin-bottom: 4px;
     padding: 5px;
     border-top-style: solid;
     border-top-color: #FF5A5E;
@@ -547,11 +597,11 @@ nav {
     color: #909090;
     letter-spacing: 0.5px;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); }
-    nav .box-upred label {
+    .sel-block .box-upred label {
       margin-left: 5px;
       font-size: 14px;
       display: block; }
-    nav .box-upred select {
+    .sel-block .box-upred select {
       padding-top: 3px;
       margin: auto;
       margin-bottom: 7px;
@@ -565,16 +615,21 @@ nav {
       border: 0px;
       border-bottom: 3px solid #D3D2D2;
       transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.5s; }
-      nav .box-upred select:focus {
+      .sel-block .box-upred select:focus {
         transition: border-color ease-in-out 0.5s;
         border-bottom-color: #FF5A5E;
         background-color: transparent;
         outline-color: transparent; }
 
-.transition {
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  transition: all 0.5s; }
+.block {
+  z-index: 1;
+  width: 100%;
+  position: fixed;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  background-color: rgba(246, 246, 248, 0.8);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); }
 
 .hidden {
   -webkit-transform: translate(0%, -100%);

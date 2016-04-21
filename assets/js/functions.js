@@ -610,50 +610,66 @@ function updateComparison(current, text){
 function navbarActivate(){
 
 	var documentElem = $(document);
-	var nav = $('#nav');
+	var block = $('.sel-block');
+	var btn = $('#show-block');
 	var lastScrollTop = 0;
 
-	documentElem.on('scroll', function() {
+	$('#show-block').on('click', function(event) {
+
 		var currentScrollTop = document.body.scrollTop;
 
-		//scroll down
-		if ( currentScrollTop > lastScrollTop) {
+		//block[0].style.top = ( currentScrollTop ) + 'px';
 
-			if ( currentScrollTop > 130) {
+		//block[0].style.top = '50px'
 
-				nav.addClass('hidden');
-				nav.addClass('transition');
+		block.toggleClass('block');
+		btn.toggleClass('down');
+
+		//block[0].style.top = '57px'
+
+	});
+
+	// documentElem.on('scroll', function() {
+	// 	var currentScrollTop = document.body.scrollTop;
+
+	// 	//scroll down
+	// 	if ( currentScrollTop > lastScrollTop) {
+
+	// 		if ( currentScrollTop > 130) {
+
+	// 			nav.addClass('hidden');
+	// 			nav.addClass('transition');
 			
-			} else {
+	// 		} else {
 				
-				nav.removeClass('transition');
-				nav[0].style.top = (0 - currentScrollTop ) + 'px';
-			}
-		} 
-		else {
+	// 			nav.removeClass('transition');
+	// 			nav[0].style.top = (0 - currentScrollTop ) + 'px';
+	// 		}
+	// 	} 
+	// 	else {
 
-			if ( currentScrollTop > 130) {
+	// 		if ( currentScrollTop > 130) {
 
-				nav.addClass('transition');
-				nav.removeClass('hidden');
-				nav[0].style.top = "0px"
+	// 			nav.addClass('transition');
+	// 			nav.removeClass('hidden');
+	// 			nav[0].style.top = "0px"
 			
-			} else {
+	// 		} else {
 
-				var temp = parseInt(nav[0].style.top, 10);
+	// 			var temp = parseInt(nav[0].style.top, 10);
 
-				if ( currentScrollTop < 90) {				
-				nav.removeClass('transition');
-				}
+	// 			if ( currentScrollTop < 90) {				
+	// 			nav.removeClass('transition');
+	// 			}
 
-				nav[0].style.top = (0 - currentScrollTop ) + 'px';			
+	// 			nav[0].style.top = (0 - currentScrollTop ) + 'px';			
 
-			};
+	// 		};
 
-		};
+	// 	};
 
-		lastScrollTop = currentScrollTop;
-	})
+	// 	lastScrollTop = currentScrollTop;
+	// })
 
 };
 
@@ -689,25 +705,28 @@ function createTrendLegend(){
 
 function displayTrend(current, sourceData, options, text){
 
-	//var trendData = getTrendData();
-	var trendData = getTrendData(sourceData, options);
+	if ( options.type != scdGl.optionsLast.type) {
+		//var trendData = getTrendData();
+		var trendData = getTrendData(sourceData, options);
 
-	var chartObj = initChartObj();
+		var chartObj = initChartObj();
 
-	var chartData = chartObj.initChartData().addTrendData(trendData);
+		var chartData = chartObj.initChartData().addTrendData(trendData);
 
-	//Load 	Line chart for mothly trend
-	var ctx1 = document.getElementById("monthTrend").getContext("2d");
+		//Load 	Line chart for mothly trend
+		var ctx1 = document.getElementById("monthTrend").getContext("2d");
 
-	if (window.lineTrend) {
-		window.lineTrend.destroy();
+		if (window.lineTrend) {
+			window.lineTrend.destroy();
+		};
+			
+		window.lineTrend = new Chart(ctx1).Line(chartData, {
+			//String - A legend template
+			legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li style=\"display: list-item;\"><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
+
+		});
+
 	};
-		
-	window.lineTrend = new Chart(ctx1).Line(chartData, {
-		//String - A legend template
-		legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li style=\"display: list-item;\"><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
-
-	});
 
 
 	function initChartObj(){
