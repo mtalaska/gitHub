@@ -285,8 +285,7 @@ body {
   width: 6.866%; }
 
 .container {
-  position: relative;
-  margin-top: 56px;
+  margin-top: 150px;
   margin-right: auto;
   margin-left: auto;
   padding-left: 5px;
@@ -480,13 +479,16 @@ ul {
     display: inline-block; } }
 @media only screen and (max-width: 768px) {
   .col {
-    margin: 1% 0 1% 0%; }
+    margin: 1% 0 0 0%; }
 
   .span_1_of_12, .span_2_of_12, .span_3_of_12, .span_4_of_12, .span_45_of_12, .span_5_of_12, .span_6_of_12, .span_7_of_12, .span_8_of_12, .span_9_of_12, .span_10_of_12, .span_11_of_12, .span_12_of_12 {
     width: 100%; }
 
   .offset-1 {
     margin-left: 0% !important; } }
+@media (max-width: 768px) {
+  .container {
+    margin-top: 328px; } }
 @media (min-width: 768px) {
   .container {
     width: 750px;
@@ -639,110 +641,108 @@ nav {
   transform: translate(0%, -100%);
   box-shadow: 0px 0px 0px transparent; }
 
-.second {
-  margin-top: 150px; }
-  .second .panel {
-    height: 400px; }
-  .second .panel-body {
-    height: 93%;
-    box-sizing: border-box;
-    position: relative; }
-    .second .panel-body .foot {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      font-size: x-small;
-      text-align: right;
-      margin: 0;
-      padding: 0;
-      color: #909090; }
-    .second .panel-body .hits-box {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -moz-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      -o-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      height: auto;
-      width: 90%; }
-  .second .comparison-box {
-    margin: 15px auto;
-    position: relative;
-    height: 55px;
-    width: 100%;
-    max-width: 430px;
-    display: -webkit-box;
-    display: -moz-box;
-    display: box;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -moz-box-align: center;
-    box-align: center;
-    -webkit-align-items: center;
-    -moz-align-items: center;
-    -ms-align-items: center;
-    -o-align-items: center;
-    align-items: center;
-    -ms-flex-align: center;
-    -webkit-box-pack: center;
-    -moz-box-pack: center;
-    box-pack: center;
-    -webkit-justify-content: space-around;
-    -moz-justify-content: space-around;
-    -ms-justify-content: space-around;
-    -o-justify-content: space-around;
-    justify-content: space-around;
-    -ms-flex-pack: center; }
-  .second .hit-n {
-    color: text-color;
-    display: block;
-    margin: 0;
+.second .panel {
+  height: 400px; }
+.second .panel-body {
+  height: 93%;
+  box-sizing: border-box;
+  position: relative; }
+  .second .panel-body .foot {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: x-small;
     text-align: right;
-    height: 28px; }
-  .second [class^="comp-"] {
-    height: 100%; }
-    .second [class^="comp-"].comp-value {
-      width: 60px; }
-      .second [class^="comp-"].comp-value p {
-        text-align: right; }
-    .second [class^="comp-"].comp-graph {
-      position: relative;
-      width: 70px; }
-      .second [class^="comp-"].comp-graph:after {
-        top: 0%;
-        left: 0%;
-        position: absolute;
-        content: "";
-        height: 100%;
-        width: 35px;
-        border-right: 2px solid;
-        border-color: #D3D2D2;
-        width: 50%;
-        box-sizing: border-box; }
-      .second [class^="comp-"].comp-graph .graph-bar {
-        height: 14px;
-        margin-top: 9px;
-        -webkit-transition: all, 0.8s;
-        -moz-transition: all, 0.8s;
-        transition: all, 0.8s;
-        margin-left: 50%;
-        margin-right: 50%; }
-      .second [class^="comp-"].comp-graph .green {
-        background-color: #9CC96B; }
-      .second [class^="comp-"].comp-graph .red {
-        background-color: #FF5A5E; }
-    .second [class^="comp-"].comp-data {
-      width: 176px;
+    margin: 0;
+    padding: 0;
+    color: #909090; }
+  .second .panel-body .hits-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    height: auto;
+    width: 90%; }
+.second .comparison-box {
+  margin: 15px auto;
+  position: relative;
+  height: 55px;
+  width: 100%;
+  max-width: 430px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
+  -ms-justify-content: space-around;
+  -o-justify-content: space-around;
+  justify-content: space-around;
+  -ms-flex-pack: center; }
+.second .hit-n {
+  color: text-color;
+  display: block;
+  margin: 0;
+  text-align: right;
+  height: 28px; }
+.second [class^="comp-"] {
+  height: 100%; }
+  .second [class^="comp-"].comp-value {
+    width: 60px; }
+    .second [class^="comp-"].comp-value p {
       text-align: right; }
-      .second [class^="comp-"].comp-data p {
-        font-size: 12px;
-        line-height: 18px;
-        margin: 6px 0 0 0; }
+  .second [class^="comp-"].comp-graph {
+    position: relative;
+    width: 70px; }
+    .second [class^="comp-"].comp-graph:after {
+      top: 0%;
+      left: 0%;
+      position: absolute;
+      content: "";
+      height: 100%;
+      width: 35px;
+      border-right: 2px solid;
+      border-color: #D3D2D2;
+      width: 50%;
+      box-sizing: border-box; }
+    .second [class^="comp-"].comp-graph .graph-bar {
+      height: 14px;
+      margin-top: 9px;
+      -webkit-transition: all, 0.8s;
+      -moz-transition: all, 0.8s;
+      transition: all, 0.8s;
+      margin-left: 50%;
+      margin-right: 50%; }
+    .second [class^="comp-"].comp-graph .green {
+      background-color: #9CC96B; }
+    .second [class^="comp-"].comp-graph .red {
+      background-color: #FF5A5E; }
+  .second [class^="comp-"].comp-data {
+    width: 176px;
+    text-align: right; }
+    .second [class^="comp-"].comp-data p {
+      font-size: 12px;
+      line-height: 18px;
+      margin: 6px 0 0 0; }
 
 @media (max-width: 400px) {
   .second .comparison-box p {
