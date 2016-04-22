@@ -13,7 +13,6 @@ $( document ).ready(function() {
 
 	// The rest baby
 	Chart.defaults.global.responsive = true;
-	// Chart.defaults.global.maintainAspectRatio = false;
 
 	updatescreeningInfo(scdGl.current, scdGl.text);
 
@@ -608,68 +607,18 @@ function updateComparison(current, text){
 };
 
 function navbarActivate(){
-
-	var documentElem = $(document);
+	
 	var block = $('.sel-block');
 	var btn = $('#show-block');
-	var lastScrollTop = 0;
 
 	$('#show-block').on('click', function(event) {
 
 		var currentScrollTop = document.body.scrollTop;
 
-		//block[0].style.top = ( currentScrollTop ) + 'px';
-
-		//block[0].style.top = '50px'
-
 		block.toggleClass('block');
 		btn.toggleClass('down');
 
-		//block[0].style.top = '57px'
-
-	});
-
-	// documentElem.on('scroll', function() {
-	// 	var currentScrollTop = document.body.scrollTop;
-
-	// 	//scroll down
-	// 	if ( currentScrollTop > lastScrollTop) {
-
-	// 		if ( currentScrollTop > 130) {
-
-	// 			nav.addClass('hidden');
-	// 			nav.addClass('transition');
-			
-	// 		} else {
-				
-	// 			nav.removeClass('transition');
-	// 			nav[0].style.top = (0 - currentScrollTop ) + 'px';
-	// 		}
-	// 	} 
-	// 	else {
-
-	// 		if ( currentScrollTop > 130) {
-
-	// 			nav.addClass('transition');
-	// 			nav.removeClass('hidden');
-	// 			nav[0].style.top = "0px"
-			
-	// 		} else {
-
-	// 			var temp = parseInt(nav[0].style.top, 10);
-
-	// 			if ( currentScrollTop < 90) {				
-	// 			nav.removeClass('transition');
-	// 			}
-
-	// 			nav[0].style.top = (0 - currentScrollTop ) + 'px';			
-
-	// 		};
-
-	// 	};
-
-	// 	lastScrollTop = currentScrollTop;
-	// })
+	});	
 
 };
 
@@ -705,7 +654,7 @@ function createTrendLegend(){
 
 function displayTrend(current, sourceData, options, text){
 
-	if ( options.type != scdGl.optionsLast.type) {
+	if ( options.type != scdGl.optionsLast.type | options.lgreg != scdGl.optionsLast.lgreg) {
 		//var trendData = getTrendData();
 		var trendData = getTrendData(sourceData, options);
 
