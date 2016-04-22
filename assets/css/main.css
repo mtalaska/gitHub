@@ -222,7 +222,7 @@ body {
   -webkit-tap-highlight-color: #FFF498; }
 
 body {
-  overflow: hidden;
+  overflow-x: hidden;
   width: 100%;
   background: #F6F6F8;
   font-size: 14px;
