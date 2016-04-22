@@ -583,6 +583,7 @@ nav {
       position: absolute; } }
 
 .sel-block {
+  z-index: 1;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
@@ -627,7 +628,6 @@ nav {
         outline-color: transparent; }
 
 .block {
-  z-index: 1;
   width: auto;
   position: fixed;
   left: 0px;
