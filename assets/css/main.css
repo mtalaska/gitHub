@@ -533,8 +533,7 @@ nav {
     width: 32px;
     border-radius: 50%;
     border: 0px hidden;
-    background-color: rgba(160, 162, 163, 0.4);
-    box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.1); }
+    background-color: transparent; }
     nav .nav-container .button:after {
       content: "";
       left: 9px;
