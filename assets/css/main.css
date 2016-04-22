@@ -666,7 +666,8 @@ nav {
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     height: auto;
-    width: 90%; }
+    width: 90%;
+    max-width: 400px; }
 .second .comparison-box {
   margin: 15px auto;
   position: relative;
@@ -743,6 +744,9 @@ nav {
       font-size: 12px;
       line-height: 18px;
       margin: 6px 0 0 0; }
+@media (max-width: 768px) {
+  .second .second-one .panel {
+    height: 280px; } }
 
 @media (max-width: 400px) {
   .second .comparison-box p {
@@ -966,6 +970,7 @@ nav {
   .fifth .panel-body .around {
     height: 100%;
     padding: 10px;
+    margin: 20px auto;
     display: -webkit-box;
     display: -moz-box;
     display: box;
@@ -994,7 +999,9 @@ nav {
       width: 100%;
       margin: 0 auto; }
     .fifth .panel-body .around .legend {
-      margin: 0px 30px 0 30px; }
+      margin: 0 auto; }
+      .fifth .panel-body .around .legend .doughnut-legend {
+        padding-left: 20px; }
   .fifth .panel-body .wrap {
     overflow: hidden;
     position: relative;
@@ -1012,10 +1019,25 @@ nav {
       max-width: 500px;
       margin: auto; }
     .fifth .panel-body .wrap .legendPersonResponsible {
-      margin-top: 60px;
-      margin-left: 30px;
+      padding: 0px;
+      margin-top: 30px;
       position: relative;
-      display: block; }
+      left: 6%; }
+      .fifth .panel-body .wrap .legendPersonResponsible span {
+        left: -20px; }
+      .fifth .panel-body .wrap .legendPersonResponsible ul {
+        margin: auto;
+        padding: 0px;
+        text-align: center; }
+        .fifth .panel-body .wrap .legendPersonResponsible ul li {
+          display: inline-block;
+          margin: 0 50px;
+          width: 41px; }
+@media (max-width: 768px) {
+  .fifth .fifth-one .panel {
+    height: auto; }
+  .fifth .fifth-two .panel {
+    height: 430px; } }
 
 footer {
   margin-top: 8px; }
