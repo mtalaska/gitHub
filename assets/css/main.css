@@ -491,7 +491,7 @@ ul {
     margin-left: 0% !important; } }
 @media (max-width: 768px) {
   .container {
-    margin-top: 328px; } }
+    margin-top: 320px; } }
 @media (min-width: 768px) {
   .container {
     width: 750px;
@@ -516,67 +516,70 @@ ul {
     width: 1170px; } }
 nav {
   z-index: 2;
-  width: 100%;
   position: fixed;
-  top: 0px; }
-  nav .button {
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
-    position: relative;
-    display: inline-block;
-    margin-top: 10px;
-    float: right;
-    height: 32px;
-    width: 32px;
-    border-radius: 50%;
-    border: 0px hidden;
-    background-color: rgba(160, 162, 163, 0.4);
-    box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.1); }
-    nav .button:after {
-      content: "";
-      left: 9px;
-      top: 13px;
-      position: absolute;
-      height: 10px;
-      width: 10px;
-      border-right: 3px solid;
-      border-bottom: 3px solid;
-      border-color: #D3D2D2;
-      -webkit-transform: rotate(-135deg);
-      -moz-transform: rotate(-135deg);
-      -ms-transform: rotate(-135deg);
-      -o-transform: rotate(-135deg);
-      transform: rotate(-135deg); }
-    nav .button:focus {
-      border: 0px hidden;
-      outline-style: none; }
-    nav .button:active {
-      box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.5); }
-  nav .down {
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-    transform: rotate(180deg); }
-  nav .nav-first {
+  top: 0px;
+  width: 100%; }
+  nav .nav-first .nav-container {
     background-color: #32404E;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
-    position: relative; }
-    nav .nav-first .logo {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4); }
+    nav .nav-first .nav-container .button {
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s;
+      position: relative;
+      display: inline-block;
+      margin-top: 10px;
+      float: right;
+      height: 32px;
+      width: 32px;
+      border-radius: 50%;
+      border: 0px hidden;
+      background-color: rgba(160, 162, 163, 0.4);
+      box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.1); }
+      nav .nav-first .nav-container .button:after {
+        content: "";
+        left: 9px;
+        top: 13px;
+        position: absolute;
+        height: 10px;
+        width: 10px;
+        border-right: 3px solid;
+        border-bottom: 3px solid;
+        border-color: #D3D2D2;
+        -webkit-transform: rotate(-135deg);
+        -moz-transform: rotate(-135deg);
+        -ms-transform: rotate(-135deg);
+        -o-transform: rotate(-135deg);
+        transform: rotate(-135deg); }
+      nav .nav-first .nav-container .button:focus {
+        border: 0px hidden;
+        outline-style: none; }
+      nav .nav-first .nav-container .button:active {
+        box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.5); }
+    nav .nav-first .nav-container .down {
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      transform: rotate(180deg); }
+    nav .nav-first .nav-container .logo {
       display: inline-block;
       height: 30px;
       width: 30px;
       position: relative;
       top: 9px; }
-    nav .nav-first h3 {
+    nav .nav-first .nav-container h3 {
       display: inline-block;
       position: relative;
       margin: 0;
       padding: 10px 0px 10px 10px;
       top: 2px; }
+    @media (max-width: 768px) {
+      nav .nav-first .nav-container h3 {
+        padding: 11px 0px;
+        font-size: 20px; } }
     @media (max-width: 370px) {
-      nav .nav-first .logo {
+      nav .nav-first .nav-container .logo {
         display: none;
         position: absolute; } }
 
@@ -626,8 +629,10 @@ nav {
 
 .block {
   z-index: 1;
-  width: 100%;
+  width: auto;
   position: fixed;
+  left: 0px;
+  right: 0px;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
@@ -1005,7 +1010,6 @@ nav {
     .fifth .panel-body .around .legend {
       margin: 0px 30px 0 30px; }
   .fifth .panel-body .wrap {
-    display: none;
     overflow: hidden;
     position: relative;
     top: 50%;
